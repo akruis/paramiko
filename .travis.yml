@@ -10,9 +10,9 @@ python:
   - "3.6"
   - "3.7-dev"
   - "pypy-5.6.0"
+env:
+  - USE_K5TEST=yes
 matrix:
-  global:
-    - USE_K5TEST=yes
   allow_failures:
     - python: "3.7-dev"
   # Explicitly test against our oldest supported cryptography.io, in addition
