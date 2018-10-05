@@ -11,6 +11,8 @@ python:
   - "3.7-dev"
   - "pypy-5.6.0"
 matrix:
+  global:
+    - USE_K5TEST=yes
   allow_failures:
     - python: "3.7-dev"
   # Explicitly test against our oldest supported cryptography.io, in addition
@@ -20,10 +22,10 @@ matrix:
       env: "CRYPTO_BEFORE=1.6"
     - python: 3.6
       env: "CRYPTO_BEFORE=1.6"
-    - python: 2.7
-      env: "USE_K5TEST=yes"
-    - python: 3.6
-      env: "USE_K5TEST=yes"
+  #  - python: 2.7
+  #    env: "USE_K5TEST=yes"
+  #  - python: 3.6
+  #    env: "USE_K5TEST=yes"
 install:
   # Ensure modern pip/etc to avoid some issues w/ older worker environs
   - pip install pip==9.0.1 setuptools==36.6.0
